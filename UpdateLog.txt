@@ -1,0 +1,23 @@
+Added some stuff, forgot what.....
+
+What to be added:
+
+
+- Ores, Coco, Silver, Mithril, Amethyst.
+- Tools and Armor.
+- Magic Books.
+- Machinery
+- Dragon Stone
+- ArmorBench/Anvil
+- Entities
+- Custom Block/Item IDs
+
+Important to be added:
+
+- Configurable IDs
+
+
+Added stuff that's not on list:
+
+
+
