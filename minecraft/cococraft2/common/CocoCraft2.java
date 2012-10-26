@@ -47,7 +47,7 @@ public class CocoCraft2
 	public static EnumToolMaterial Amethyst = EnumHelper.addToolMaterial("AMETHYSY", 2, 3334, 15F, 15, 12);
 	public static EnumToolMaterial Steel = EnumHelper.addToolMaterial("STEEL", 2, 998, 7F, 8, 16);
 	public static EnumToolMaterial DragonStone = EnumHelper.addToolMaterial("DRAGON", 2, 4734, 9F, 8, 16);
-
+	public static EnumToolMaterial Obsidian = EnumHelper.addToolMaterial("OBSIDIAN", 2, 2012, 10F, 7, 2);
 	
 	//Defines Armor Materials
 	public static EnumArmorMaterial COCO = EnumHelper.addArmorMaterial("COCO", 48, new int[]{4, 8, 6, 2}, 4);
@@ -55,7 +55,7 @@ public class CocoCraft2
 	public static EnumArmorMaterial SILVER = EnumHelper.addArmorMaterial("SILVER", 26, new int[] {3, 6, 5, 3}, 5);
 	public static EnumArmorMaterial AMETHYST = EnumHelper.addArmorMaterial("AMETHYST", 36, new int[] {3, 6, 6, 2}, 5);
 
-	@Instance
+	@Instance("CocoCraft2")
 	public static CocoCraft2 instance;
 	
 	@SidedProxy(clientSide = "cococraft2.client.ClientProxy", serverSide = "cococraft2.common.CommonProxy")
@@ -134,6 +134,17 @@ public class CocoCraft2
 		MinecraftForge.setToolClass(items.SilverSword, "sword", 2);
 		MinecraftForge.setToolClass(items.SilverHoe, "hoe", 2);
 		
+		MinecraftForge.setToolClass(items.SteelPickaxe, "pickaxe", 3);
+		MinecraftForge.setToolClass(items.SteelAxe, "axe", 3);
+		MinecraftForge.setToolClass(items.SteelShovel, "shovel", 3);
+		MinecraftForge.setToolClass(items.SteelSword, "sword", 3);
+		MinecraftForge.setToolClass(items.SteelHoe, "hoe", 3);
+		
+		MinecraftForge.setToolClass(items.DragonStonePickaxe, "pickaxe", 3);
+		MinecraftForge.setToolClass(items.DragonStoneAxe, "axe", 3);
+		MinecraftForge.setToolClass(items.DragonStoneShovel, "shovel", 3);
+		MinecraftForge.setToolClass(items.DragonStoneSword, "sword", 3);
+		MinecraftForge.setToolClass(items.DragonStoneHoe, "hoe", 3);
 	}
 	
 	

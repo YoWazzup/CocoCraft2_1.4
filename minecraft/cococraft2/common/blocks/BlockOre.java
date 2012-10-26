@@ -76,9 +76,10 @@ public class BlockOre extends Block
 		default : return blockID;
 		}
 	}
-	public int damageDropped(int i, int j) {
+	@Override
+	public int damageDropped(int i) {
 		
-		switch(j)
+		switch(i)
 		{
 
 		case 3 : return 3;

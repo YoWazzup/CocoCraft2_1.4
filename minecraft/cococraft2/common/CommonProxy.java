@@ -26,12 +26,28 @@ public class CommonProxy implements IGuiHandler
 	public static String CocoArmor1 = "CC/Armor/coco_1.png";
 	public static String CocoArmor2 = "CC/Armor/coco_2.png";
 	
+	public static String MithrilArmor1 = "CC/Armor/mithril_1.png";
+	public static String MithrilArmor2 = "CC/Armor/mithril_2.png";
+	
+	public static String SilverArmor1 = "CC/Armor/silver_1.png";
+	public static String SilverArmor2 = "CC/Armor/silver_2.png";
+	
+	public static String AmethystArmor1 = "CC/Armor/amethyst_1.png";
+	public static String AmethystArmor2 = "CC/Armor/amethyst_2.png";
+	
+	
 	public void registerRenderThings()
 	{
 		MinecraftForgeClient.preloadTexture(BlockTex);
 		MinecraftForgeClient.preloadTexture(ItemTex);
 		MinecraftForgeClient.preloadTexture(CocoArmor1);
 		MinecraftForgeClient.preloadTexture(CocoArmor2);
+		MinecraftForgeClient.preloadTexture(MithrilArmor1);
+		MinecraftForgeClient.preloadTexture(MithrilArmor2);
+		MinecraftForgeClient.preloadTexture(SilverArmor1);
+		MinecraftForgeClient.preloadTexture(SilverArmor2);
+		MinecraftForgeClient.preloadTexture(AmethystArmor1);
+		MinecraftForgeClient.preloadTexture(AmethystArmor2);
 	}
 	@Override
 	public Object getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) 

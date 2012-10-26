@@ -14,7 +14,7 @@ public class ItemEssence extends Item
 	public ItemEssence(int i) 
 	{
 		super(i);
-		setCreativeTab(CreativeTabs.tabTools);
+		setCreativeTab(CreativeTabs.tabMisc);
 		setHasSubtypes(true);
 	}
 	public String getTextureFile()
@@ -30,6 +30,7 @@ public class ItemEssence extends Item
 			case 1 : return 83;
 			case 2 : return 84;
 			case 3 : return 81;
+			case 4 : return 90;
 			default : return 82;
 		}
 	}
@@ -45,6 +46,7 @@ public class ItemEssence extends Item
 		case 1: return "WaterEssence";
 		case 2: return "AirEssence";
 		case 3: return "EarthEssence";
+		case 4: return "Magma Essence";
 		default : return "FireEssence";
 
 		}
@@ -52,7 +54,7 @@ public class ItemEssence extends Item
 	@SideOnly(Side.CLIENT)
 	public void getSubItems(int i, CreativeTabs tab, List list)
 	{
-		for(int j=0;j < 4; j++)
+		for(int j=0;j < 5; j++)
 		{
 			list.add(new ItemStack(i, 1, j));
 		}		

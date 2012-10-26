@@ -28,7 +28,7 @@ public class CocoRecipes
 
 	private static void addRegularRecipes() 
 	{	
-		
+		gr.addShapelessRecipe(new ItemStack(items.Ingots, 1, 13), new Object[] {new ItemStack(items.Ingots, 1, 12), new ItemStack(items.Ingots, 1, 12), new ItemStack(items.Ingots, 1, 12)});
 		
 		gr.addRecipe(new ItemStack(blocks.OreBlock, 3, 4), new Object[]{"L L", " D ", "L L", 'L', Block.blockLapis, 'D', Block.stone});
 		
@@ -79,6 +79,8 @@ public class CocoRecipes
 		gr.addRecipe(new ItemStack(items.DragonStoneShovel, 1), new Object[] {" I ", " S ", " S ", 'I', new ItemStack(items.Ingots, 1, 4), 'S', new ItemStack(items.Ingots, 1, 5)});
 		gr.addRecipe(new ItemStack(items.DragonStoneSword, 1), new Object[] {" I ", " I ", " S ", 'I', new ItemStack(items.Ingots, 1, 4), 'S', new ItemStack(items.Ingots, 1, 5)});
 		gr.addRecipe(new ItemStack(items.DragonStoneHoe, 1), new Object[] {"II ", " S ", " S ", 'I', new ItemStack(items.Ingots, 1, 4), 'S', new ItemStack(items.Ingots, 1, 5)});
+		
+		gr.addRecipe(new ItemStack(items.ObsidianMultiTool, 1), new Object[]{"XXX", "XSX", "XSX", 'X', new ItemStack(items.Ingots,1 ,13), 'S', new ItemStack(items.Ingots, 1, 5)});
 
 	}
 	private static void addShaplessRecipes() 
@@ -96,6 +98,21 @@ public class CocoRecipes
 		gr.addRecipe(new ItemStack(items.CocoLegs, 1), new Object[] {"111", "1 1", "1 1", Character.valueOf('1'), new ItemStack(items.Ingots, 1, 0)});
 		gr.addRecipe(new ItemStack(items.CocoBoots, 1), new Object[] {"1 1", "1 1", Character.valueOf('1'), new ItemStack(items.Ingots, 1, 0)});
 		gr.addRecipe(new ItemStack(items.CocoHelmet, 1), new Object[] {"111", "1 1", Character.valueOf('1'), new ItemStack(items.Ingots, 1, 0)});
+
+		gr.addRecipe(new ItemStack(items.MithrilChest, 1), new Object[] {"1 1", "111", "111", Character.valueOf('1'), new ItemStack(items.Ingots, 1, 1)});
+		gr.addRecipe(new ItemStack(items.MithrilLegs, 1), new Object[] {"111", "1 1", "1 1", Character.valueOf('1'), new ItemStack(items.Ingots, 1, 1)});
+		gr.addRecipe(new ItemStack(items.MithrilBoots, 1), new Object[] {"1 1", "1 1", Character.valueOf('1'), new ItemStack(items.Ingots, 1, 1)});
+		gr.addRecipe(new ItemStack(items.MithrilHelmet, 1), new Object[] {"111", "1 1", Character.valueOf('1'), new ItemStack(items.Ingots, 1, 1)});
+
+		gr.addRecipe(new ItemStack(items.SilverChest, 1), new Object[] {"1 1", "111", "111", Character.valueOf('1'), new ItemStack(items.Ingots, 1, 2)});
+		gr.addRecipe(new ItemStack(items.SilverLegs, 1), new Object[] {"111", "1 1", "1 1", Character.valueOf('1'), new ItemStack(items.Ingots, 1, 2)});
+		gr.addRecipe(new ItemStack(items.SilverBoots, 1), new Object[] {"1 1", "1 1", Character.valueOf('1'), new ItemStack(items.Ingots, 1, 2)});
+		gr.addRecipe(new ItemStack(items.SilverHelmet, 1), new Object[] {"111", "1 1", Character.valueOf('1'), new ItemStack(items.Ingots, 1, 2)});
+		
+		gr.addRecipe(new ItemStack(items.AmethystChest, 1), new Object[] {"1 1", "111", "111", Character.valueOf('1'), new ItemStack(items.Ingots, 1, 3)});
+		gr.addRecipe(new ItemStack(items.AmethystLegs, 1), new Object[] {"111", "1 1", "1 1", Character.valueOf('1'), new ItemStack(items.Ingots, 1, 3)});
+		gr.addRecipe(new ItemStack(items.AmethystBoots, 1), new Object[] {"1 1", "1 1", Character.valueOf('1'), new ItemStack(items.Ingots, 1, 3)});
+		gr.addRecipe(new ItemStack(items.AmethystHelmet, 1), new Object[] {"111", "1 1", Character.valueOf('1'), new ItemStack(items.Ingots, 1, 3)});
 
 	}
 	public static void oreBlockRecipes()
