@@ -36,6 +36,7 @@ public class BlockEssence extends Block
 		case 1 : return 9;
 		case 2 : return 9;
 		case 3 : return 9;
+		case 4 : return 11;
 		default : return 9;
 		}
 	}
@@ -51,18 +52,23 @@ public class BlockEssence extends Block
 			return cci.Essence.shiftedIndex;
 		case 3:
 			return cci.Essence.shiftedIndex;
+		case 4: 
+			return cci.Essence.shiftedIndex;
 			
 		default : return cci.Essence.shiftedIndex;
 		}
 	}
-	public int damageDropped(int i, int j) {
+	@Override
+	public int damageDropped(int i) {
 		
-		switch(j)
+		
+		switch(i)
 		{
 		case 0 : return 0;
 		case 1 : return 1;
 		case 2 : return 2;
 		case 3 : return 3;
+		case 4 : return 4;
 		
 		default : return 0;
 		}
@@ -71,7 +77,7 @@ public class BlockEssence extends Block
 	@SideOnly(Side.CLIENT)
 	public void getSubBlocks(int i, CreativeTabs tabs, List list)
 	{
-		for(int j = 0; j < 4; j++)
+		for(int j = 0; j < 5; j++)
 		{
 			list.add(new ItemStack(i, 1, j));
 		}
