@@ -38,9 +38,9 @@ public class ContainerCrusher extends Container
     public void addCraftingToCrafters(ICrafting par1ICrafting)
     {
         super.addCraftingToCrafters(par1ICrafting);
-        par1ICrafting.updateCraftingInventoryInfo(this, 0, this.crusher.crusherCookTime);
-        par1ICrafting.updateCraftingInventoryInfo(this, 1, this.crusher.crusherBurnTime);
-        par1ICrafting.updateCraftingInventoryInfo(this, 2, this.crusher.currentItemBurnTime);
+        par1ICrafting.sendProgressBarUpdate(this, 0, this.crusher.crusherCookTime);
+        par1ICrafting.sendProgressBarUpdate(this, 1, this.crusher.crusherBurnTime);
+        par1ICrafting.sendProgressBarUpdate(this, 2, this.crusher.currentItemBurnTime);
     }
 
     /**
@@ -57,17 +57,17 @@ public class ContainerCrusher extends Container
 
             if (this.lastCookTime != this.crusher.crusherCookTime)
             {
-                var2.updateCraftingInventoryInfo(this, 0, this.crusher.crusherCookTime);
+                var2.sendProgressBarUpdate(this, 0, this.crusher.crusherCookTime);
             }
 
             if (this.lastBurnTime != this.crusher.crusherBurnTime)
             {
-                var2.updateCraftingInventoryInfo(this, 1, this.crusher.crusherBurnTime);
+                var2.sendProgressBarUpdate(this, 1, this.crusher.crusherBurnTime);
             }
 
             if (this.lastItemBurnTime != this.crusher.currentItemBurnTime)
             {
-                var2.updateCraftingInventoryInfo(this, 2, this.crusher.currentItemBurnTime);
+                var2.sendProgressBarUpdate(this, 2, this.crusher.currentItemBurnTime);
             }
         }
 
@@ -169,7 +169,7 @@ public class ContainerCrusher extends Container
                 return null;
             }
 
-            var4.func_82870_a(par1EntityPlayer, var5);
+            var4.onPickupFromSlot(par1EntityPlayer, var5);
         }
 
         return var3;

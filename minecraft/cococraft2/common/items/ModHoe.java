@@ -1,10 +1,11 @@
 package cococraft2.common.items;
 
-import cococraft2.common.CommonProxy;
 import net.minecraft.src.CreativeTabs;
 import net.minecraft.src.EnumToolMaterial;
 import net.minecraft.src.ItemHoe;
-import net.minecraft.src.ItemPickaxe;
+import cococraft2.client.ClientProxy;
+import cpw.mods.fml.common.Side;
+import cpw.mods.fml.common.asm.SideOnly;
 
 public class ModHoe extends ItemHoe
 {
@@ -13,8 +14,9 @@ public class ModHoe extends ItemHoe
 		super(i, tool);
 		setCreativeTab(CreativeTabs.tabTools);
 	}
+	@SideOnly(Side.CLIENT)
 	public String getTextureFile()
 	{
-		return CommonProxy.ItemTex;
+		return ClientProxy.ItemTex;
 	}
 }

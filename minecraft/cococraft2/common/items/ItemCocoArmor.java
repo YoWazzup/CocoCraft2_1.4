@@ -1,31 +1,36 @@
 package cococraft2.common.items;
 
-import java.util.ArrayList;
-
-import cococraft2.client.ClientProxy;
-import cococraft2.common.CommonProxy;
-
 import net.minecraft.src.CreativeTabs;
 import net.minecraft.src.EnumArmorMaterial;
 import net.minecraft.src.ItemArmor;
 import net.minecraft.src.ItemStack;
 import net.minecraftforge.common.IArmorTextureProvider;
+import cococraft2.client.ClientProxy;
+import cpw.mods.fml.common.Side;
+import cpw.mods.fml.common.asm.SideOnly;
 
 public class ItemCocoArmor extends ItemArmor implements IArmorTextureProvider
 {
 	public static CocoCraftItems cci;
-	public static CommonProxy proxy;
+	public static ClientProxy proxy;
 
+	
+	public static final int[] maxDamageArray = new int[] {11, 16, 15, 13};
+
+	
 	public ItemCocoArmor(int i, EnumArmorMaterial enumarmormaterial, int j, int k)
 	{
 		super(i, enumarmormaterial, j, k);
 		setCreativeTab(CreativeTabs.tabCombat);
 	}
-
+	
+	@SideOnly(Side.CLIENT)
 	public String getTextureFile()
 	{
 		return proxy.ItemTex;
 	}
+	
+	@SideOnly(Side.CLIENT)
 	public String getArmorTextureFile(ItemStack itemstack)
 	{
 		//Coco Armor
@@ -66,4 +71,9 @@ public class ItemCocoArmor extends ItemArmor implements IArmorTextureProvider
         }
 		return  proxy.CocoArmor2;
 	}
+	
+	public static int[] getMaxDamageArray()
+	    {
+	        return maxDamageArray;
+	    }
 }

@@ -1,15 +1,25 @@
 package cococraft2.common.blocks;
 
-import cpw.mods.fml.common.Side;
-import cpw.mods.fml.common.asm.SideOnly;
 import java.util.Random;
 
+import net.minecraft.src.Block;
+import net.minecraft.src.BlockContainer;
+import net.minecraft.src.CreativeTabs;
+import net.minecraft.src.EntityItem;
+import net.minecraft.src.EntityLiving;
+import net.minecraft.src.EntityPlayer;
+import net.minecraft.src.IBlockAccess;
+import net.minecraft.src.ItemStack;
+import net.minecraft.src.Material;
+import net.minecraft.src.MathHelper;
+import net.minecraft.src.NBTTagCompound;
+import net.minecraft.src.TileEntity;
+import net.minecraft.src.World;
 import cococraft2.client.ClientProxy;
 import cococraft2.common.CocoCraft2;
-import cococraft2.common.CommonProxy;
 import cococraft2.common.machine.TileEntityCompressor;
-
-import net.minecraft.src.*;
+import cpw.mods.fml.common.Side;
+import cpw.mods.fml.common.asm.SideOnly;
 
 public class BlockCompressor extends BlockContainer
 {
@@ -42,10 +52,10 @@ public class BlockCompressor extends BlockContainer
     {
         return blockID;
     }
-    
+    @SideOnly(Side.CLIENT)
     public String getTextureFile()
     {
-    	return CommonProxy.BlockTex;
+    	return ClientProxy.BlockTex;
     }
 
     /**

@@ -1,11 +1,11 @@
 package cococraft2.common.items;
 
-import cococraft2.common.CommonProxy;
 import net.minecraft.src.CreativeTabs;
-import net.minecraft.src.EntityPlayer;
-import net.minecraft.src.IInventory;
 import net.minecraft.src.Item;
 import net.minecraft.src.ItemStack;
+import cococraft2.client.ClientProxy;
+import cpw.mods.fml.common.Side;
+import cpw.mods.fml.common.asm.SideOnly;
 
 public class ItemHammer extends Item
 {
@@ -16,9 +16,10 @@ public class ItemHammer extends Item
 		maxStackSize = 1;
 		setCreativeTab(CreativeTabs.tabTools);
 	}
+	@SideOnly(Side.CLIENT)
 	public String getTextureFile()
 	{
-		return CommonProxy.ItemTex;
+		return ClientProxy.ItemTex;
 	}
 	@Override
 	public boolean doesContainerItemLeaveCraftingGrid(ItemStack item)

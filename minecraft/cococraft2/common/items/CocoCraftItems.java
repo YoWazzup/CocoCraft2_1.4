@@ -2,16 +2,12 @@ package cococraft2.common.items;
 
 import java.io.File;
 
-import cococraft2.common.CocoCraft2;
 import net.minecraft.client.Minecraft;
-import net.minecraft.src.EnumArmorMaterial;
-import net.minecraft.src.EnumToolMaterial;
 import net.minecraft.src.Item;
-import net.minecraft.src.ItemReed;
 import net.minecraft.src.ItemStack;
-import net.minecraft.src.ModLoader;
 import net.minecraftforge.common.Configuration;
-import net.minecraftforge.common.EnumHelper;
+import cococraft2.common.CocoCraft2;
+import cococraft2.common.CommonProxy;
 import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
@@ -56,11 +52,15 @@ public class CocoCraftItems
 	public static Item DragonStonePickaxe, DragonStoneAxe, DragonStoneShovel, DragonStoneSword, DragonStoneHoe;
 	public static Item ObsidianMultiTool;
 	
+	public static CommonProxy proxy;
+	
+	
 	//Shortened shit
 	public static GameRegistry gr;
 	public static LanguageRegistry lg;
 	public static CocoCraft2 cc2;
-
+	public static RenderingRegistry rr;
+	
 
 	public static void init()
 	{
@@ -98,25 +98,25 @@ public class CocoCraftItems
 		DragonStoneSword = new ModSword(DragonStoneSwordID, cc2.DragonStone).setItemName("DragonStoneSword").setIconCoord(7,2);
 		DragonStoneHoe = new ModHoe(DragonStoneHoeID, cc2.DragonStone).setItemName("DragonStoneHoe").setIconCoord(8,2);
 
-		CocoHelmet = new ItemCocoArmor(CocoHelmetID, cc2.COCO, ModLoader.addArmor("Coco"), 0).setIconCoord(0,3).setItemName("CocoHelmet");
-		CocoChest = new ItemCocoArmor(CocoChestID, cc2.COCO,  ModLoader.addArmor("Coco"), 1).setIconCoord(1,3).setItemName("CocoChest");
-		CocoLegs = new ItemCocoArmor(CocoLegsID, cc2.COCO,  ModLoader.addArmor("Coco"), 2).setIconCoord(2,3).setItemName("CocoLegs");
-		CocoBoots = new ItemCocoArmor(CocoBootsID, cc2.COCO,  ModLoader.addArmor("Coco"), 3).setIconCoord(3,3).setItemName("CocoBoots");
+		CocoHelmet = new ItemCocoArmor(CocoHelmetID, cc2.COCO, rr.addNewArmourRendererPrefix("coco"), 0).setIconCoord(0,3).setItemName("CocoHelmet");
+		CocoChest = new ItemCocoArmor(CocoChestID, cc2.COCO, rr.addNewArmourRendererPrefix("coco"), 1).setIconCoord(1,3).setItemName("CocoChest");
+		CocoLegs = new ItemCocoArmor(CocoLegsID, cc2.COCO, rr.addNewArmourRendererPrefix("coco"), 2).setIconCoord(2,3).setItemName("CocoLegs");
+		CocoBoots = new ItemCocoArmor(CocoBootsID, cc2.COCO, rr.addNewArmourRendererPrefix("coco"), 3).setIconCoord(3,3).setItemName("CocoBoots");
 
-		MithrilHelmet = new ItemCocoArmor(MithrilHelmetID, cc2.MITHRIL, ModLoader.addArmor("Mithril"), 0).setIconCoord(4,3).setItemName("MithrilHelmet");
-		MithrilChest = new ItemCocoArmor(MithrilChestID, cc2.MITHRIL,  ModLoader.addArmor("Mithril"), 1).setIconCoord(5,3).setItemName("MithrilChest");
-		MithrilLegs = new ItemCocoArmor(MithrilLegsID, cc2.MITHRIL,  ModLoader.addArmor("Mithril"), 2).setIconCoord(6,3).setItemName("MithrilLegs");
-		MithrilBoots = new ItemCocoArmor(MithrilBootsID, cc2.MITHRIL,  ModLoader.addArmor("Mithril"), 3).setIconCoord(7,3).setItemName("MithrilBoots");
+		MithrilHelmet = new ItemCocoArmor(MithrilHelmetID, cc2.MITHRIL, rr.addNewArmourRendererPrefix("mithril"), 0).setIconCoord(4,3).setItemName("MithrilHelmet");
+		MithrilChest = new ItemCocoArmor(MithrilChestID, cc2.MITHRIL, rr.addNewArmourRendererPrefix("mithril"), 1).setIconCoord(5,3).setItemName("MithrilChest");
+		MithrilLegs = new ItemCocoArmor(MithrilLegsID, cc2.MITHRIL, rr.addNewArmourRendererPrefix("mithril"), 2).setIconCoord(6,3).setItemName("MithrilLegs");
+		MithrilBoots = new ItemCocoArmor(MithrilBootsID, cc2.MITHRIL, rr.addNewArmourRendererPrefix("mithril"), 3).setIconCoord(7,3).setItemName("MithrilBoots");
 
-		SilverHelmet = new ItemCocoArmor(SilverHelmetID, cc2.SILVER, ModLoader.addArmor("Silver"), 0).setIconCoord(8,3).setItemName("SilverHelmet");
-		SilverChest = new ItemCocoArmor(SilverChestID, cc2.SILVER,  ModLoader.addArmor("Silver"), 1).setIconCoord(9,3).setItemName("SilverChest");
-		SilverLegs = new ItemCocoArmor(SilverLegsID, cc2.SILVER,  ModLoader.addArmor("Silver"), 2).setIconCoord(10,3).setItemName("SilverLegs");
-		SilverBoots = new ItemCocoArmor(SilverBootsID, cc2.SILVER,  ModLoader.addArmor("Silver"), 3).setIconCoord(11,3).setItemName("SilverBoots");
+		SilverHelmet = new ItemCocoArmor(SilverHelmetID, cc2.SILVER, rr.addNewArmourRendererPrefix("silver"), 0).setIconCoord(8,3).setItemName("SilverHelmet");
+		SilverChest = new ItemCocoArmor(SilverChestID, cc2.SILVER,  rr.addNewArmourRendererPrefix("silver"), 1).setIconCoord(9,3).setItemName("SilverChest");
+		SilverLegs = new ItemCocoArmor(SilverLegsID, cc2.SILVER,  rr.addNewArmourRendererPrefix("silver"), 2).setIconCoord(10,3).setItemName("SilverLegs");
+		SilverBoots = new ItemCocoArmor(SilverBootsID, cc2.SILVER,  rr.addNewArmourRendererPrefix("silver"), 3).setIconCoord(11,3).setItemName("SilverBoots");
 
-		AmethystHelmet = new ItemCocoArmor(AmethystHelmetID, cc2.AMETHYST, ModLoader.addArmor("Amethyst"), 0).setIconCoord(12,3).setItemName("AmethystHelmet");
-		AmethystChest = new ItemCocoArmor(AmethystChestID, cc2.AMETHYST,  ModLoader.addArmor("Amethyst"), 1).setIconCoord(13,3).setItemName("AmethystChest");
-		AmethystLegs = new ItemCocoArmor(AmethystLegsID, cc2.AMETHYST,  ModLoader.addArmor("Amethyst"), 2).setIconCoord(14,3).setItemName("AmethystLegs");
-		AmethystBoots = new ItemCocoArmor(AmethystBootsID, cc2.AMETHYST,  ModLoader.addArmor("Amethyst"), 3).setIconCoord(15,3).setItemName("AmethystBoots");
+		AmethystHelmet = new ItemCocoArmor(AmethystHelmetID, cc2.AMETHYST, rr.addNewArmourRendererPrefix("amethyst"), 0).setIconCoord(12,3).setItemName("AmethystHelmet");
+		AmethystChest = new ItemCocoArmor(AmethystChestID, cc2.AMETHYST, rr.addNewArmourRendererPrefix("amethyst"), 1).setIconCoord(13,3).setItemName("AmethystChest");
+		AmethystLegs = new ItemCocoArmor(AmethystLegsID, cc2.AMETHYST, rr.addNewArmourRendererPrefix("amethyst"), 2).setIconCoord(14,3).setItemName("AmethystLegs");
+		AmethystBoots = new ItemCocoArmor(AmethystBootsID, cc2.AMETHYST, rr.addNewArmourRendererPrefix("amethyst"), 3).setIconCoord(15,3).setItemName("AmethystBoots");
 
 		Essence = new ItemEssence(EssenceID).setItemName("Essence");
 
@@ -273,5 +273,5 @@ public class CocoCraftItems
 		config.save();
 		return CocoHoeID;
 	}
-
+	
 }

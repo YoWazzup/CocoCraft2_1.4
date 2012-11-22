@@ -38,9 +38,9 @@ public class ContainerCompressor extends Container
     public void addCraftingToCrafters(ICrafting par1ICrafting)
     {
         super.addCraftingToCrafters(par1ICrafting);
-        par1ICrafting.updateCraftingInventoryInfo(this, 0, this.compressor.compressorCookTime);
-        par1ICrafting.updateCraftingInventoryInfo(this, 1, this.compressor.compressorBurnTime);
-        par1ICrafting.updateCraftingInventoryInfo(this, 2, this.compressor.currentItemBurnTime);
+        par1ICrafting.sendProgressBarUpdate(this, 0, this.compressor.compressorCookTime);
+        par1ICrafting.sendProgressBarUpdate(this, 1, this.compressor.compressorBurnTime);
+        par1ICrafting.sendProgressBarUpdate(this, 2, this.compressor.currentItemBurnTime);
     }
 
     /**
@@ -57,17 +57,17 @@ public class ContainerCompressor extends Container
 
             if (this.lastCookTime != this.compressor.compressorCookTime)
             {
-                var2.updateCraftingInventoryInfo(this, 0, this.compressor.compressorCookTime);
+                var2.sendProgressBarUpdate(this, 0, this.compressor.compressorCookTime);
             }
 
             if (this.lastBurnTime != this.compressor.compressorBurnTime)
             {
-                var2.updateCraftingInventoryInfo(this, 1, this.compressor.compressorBurnTime);
+                var2.sendProgressBarUpdate(this, 1, this.compressor.compressorBurnTime);
             }
 
             if (this.lastItemBurnTime != this.compressor.currentItemBurnTime)
             {
-                var2.updateCraftingInventoryInfo(this, 2, this.compressor.currentItemBurnTime);
+                var2.sendProgressBarUpdate(this, 2, this.compressor.currentItemBurnTime);
             }
         }
 
@@ -169,7 +169,7 @@ public class ContainerCompressor extends Container
                 return null;
             }
 
-            var4.func_82870_a(par1EntityPlayer, var5);
+            var4.onPickupFromSlot(par1EntityPlayer, var5);
         }
 
         return var3;

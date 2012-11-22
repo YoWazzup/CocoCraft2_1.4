@@ -40,9 +40,9 @@ public class ContainerBlastFurnace extends Container
 	public void addCraftingToCrafters(ICrafting par1ICrafting)
 	{
 		super.addCraftingToCrafters(par1ICrafting);
-		par1ICrafting.updateCraftingInventoryInfo(this, 0, this.blastFurnace.blastFurnaceCookTime);
-		par1ICrafting.updateCraftingInventoryInfo(this, 1, this.blastFurnace.blastFurnaceBurnTime);
-		par1ICrafting.updateCraftingInventoryInfo(this, 2, this.blastFurnace.currentItemBurnTime);
+		par1ICrafting.sendProgressBarUpdate(this, 0, this.blastFurnace.blastFurnaceCookTime);
+		par1ICrafting.sendProgressBarUpdate(this, 1, this.blastFurnace.blastFurnaceBurnTime);
+		par1ICrafting.sendProgressBarUpdate(this, 2, this.blastFurnace.currentItemBurnTime);
 	}
 
 	/**
@@ -59,17 +59,17 @@ public class ContainerBlastFurnace extends Container
 
 			if (this.lastCookTime != this.blastFurnace.blastFurnaceCookTime)
 			{
-				var2.updateCraftingInventoryInfo(this, 0, this.blastFurnace.blastFurnaceCookTime);
+				var2.sendProgressBarUpdate(this, 0, this.blastFurnace.blastFurnaceCookTime);
 			}
 
 			if (this.lastBurnTime != this.blastFurnace.blastFurnaceBurnTime)
 			{
-				var2.updateCraftingInventoryInfo(this, 1, this.blastFurnace.blastFurnaceBurnTime);
+				var2.sendProgressBarUpdate(this, 1, this.blastFurnace.blastFurnaceBurnTime);
 			}
 
 			if (this.lastItemBurnTime != this.blastFurnace.currentItemBurnTime)
 			{
-				var2.updateCraftingInventoryInfo(this, 2, this.blastFurnace.currentItemBurnTime);
+				var2.sendProgressBarUpdate(this, 2, this.blastFurnace.currentItemBurnTime);
 			}
 		}
 

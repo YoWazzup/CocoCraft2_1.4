@@ -80,7 +80,7 @@ public class CocoRecipes
 		gr.addRecipe(new ItemStack(items.DragonStoneSword, 1), new Object[] {" I ", " I ", " S ", 'I', new ItemStack(items.Ingots, 1, 4), 'S', new ItemStack(items.Ingots, 1, 5)});
 		gr.addRecipe(new ItemStack(items.DragonStoneHoe, 1), new Object[] {"II ", " S ", " S ", 'I', new ItemStack(items.Ingots, 1, 4), 'S', new ItemStack(items.Ingots, 1, 5)});
 		
-		gr.addRecipe(new ItemStack(items.ObsidianMultiTool, 1), new Object[]{"XXX", "XSX", "XSX", 'X', new ItemStack(items.Ingots,1 ,13), 'S', new ItemStack(items.Ingots, 1, 5)});
+		gr.addRecipe(new ItemStack(items.ObsidianMultiTool, 1), new Object[]{"XXX", "XSX", " S ", 'X', new ItemStack(items.Ingots,1 ,13), 'S', new ItemStack(items.Ingots, 1, 5)});
 
 	}
 	private static void addShaplessRecipes() 

@@ -3,16 +3,14 @@ package cococraft2.common.blocks;
 import java.util.List;
 import java.util.Random;
 
-import cococraft2.common.CommonProxy;
-import cococraft2.common.items.CocoCraftItems;
-import cpw.mods.fml.common.Side;
-import cpw.mods.fml.common.asm.SideOnly;
-
 import net.minecraft.src.Block;
 import net.minecraft.src.CreativeTabs;
 import net.minecraft.src.ItemStack;
 import net.minecraft.src.Material;
-import net.minecraft.src.World;
+import cococraft2.client.ClientProxy;
+import cococraft2.common.items.CocoCraftItems;
+import cpw.mods.fml.common.Side;
+import cpw.mods.fml.common.asm.SideOnly;
 
 public class BlockEssence extends Block
 {
@@ -24,9 +22,10 @@ public class BlockEssence extends Block
 		setCreativeTab(CreativeTabs.tabBlock);
 		setRequiresSelfNotify();
 	}
+	@SideOnly(Side.CLIENT)
 	public String getTextureFile()
 	{
-		return CommonProxy.BlockTex;
+		return ClientProxy.BlockTex;
 	}
 	public int getBlockTextureFromSideAndMetadata(int i, int j)
 	{

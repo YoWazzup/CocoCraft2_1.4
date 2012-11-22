@@ -43,7 +43,7 @@ public class SlotBlastFurnace extends Slot
     public void onPickupFromSlot(ItemStack par1ItemStack, EntityPlayer player)
     {
         this.onCrafting(par1ItemStack);
-        super.func_82870_a(player, par1ItemStack);
+        super.onPickupFromSlot(player, par1ItemStack);
     }
 
     /**

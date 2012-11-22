@@ -30,16 +30,21 @@ import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 
-	
 
-@Mod(modid = "CocoCraft2", name = "CocoCraft2", version = "1.0 Alpha")
+
+@Mod(modid = "CocoCraft2", name = "CocoCraft2", version = "2.0.1")
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
 
 public class CocoCraft2 
 {
 	public static CocoCraftItems items;
 	public static CocoCraftBlocks blocks;
-	
+	@Instance("CocoCraft2")
+	public static CocoCraft2 instance;
+
+	@SidedProxy(clientSide = "cococraft2.client.ClientProxy", serverSide = "cococraft2.common.CommonProxy")
+	public static CommonProxy proxy;
+
 	//Defines Tool Materials
 	public static EnumToolMaterial Coco = EnumHelper.addToolMaterial("COCO", 2, 2500, 15F, 13, 8);
 	public static EnumToolMaterial Mithril = EnumHelper.addToolMaterial("MITHRIL", 2, 650, 9F, 7, 4);
@@ -48,72 +53,73 @@ public class CocoCraft2
 	public static EnumToolMaterial Steel = EnumHelper.addToolMaterial("STEEL", 2, 998, 7F, 8, 16);
 	public static EnumToolMaterial DragonStone = EnumHelper.addToolMaterial("DRAGON", 2, 4734, 9F, 8, 16);
 	public static EnumToolMaterial Obsidian = EnumHelper.addToolMaterial("OBSIDIAN", 2, 2012, 10F, 7, 2);
-	
+
 	//Defines Armor Materials
 	public static EnumArmorMaterial COCO = EnumHelper.addArmorMaterial("COCO", 48, new int[]{4, 8, 6, 2}, 4);
 	public static EnumArmorMaterial MITHRIL = EnumHelper.addArmorMaterial("MITHRIL", 22, new int[] {2, 5, 4, 2}, 5);
 	public static EnumArmorMaterial SILVER = EnumHelper.addArmorMaterial("SILVER", 26, new int[] {3, 6, 5, 3}, 5);
 	public static EnumArmorMaterial AMETHYST = EnumHelper.addArmorMaterial("AMETHYST", 36, new int[] {3, 6, 6, 2}, 5);
 
-	@Instance("CocoCraft2")
-	public static CocoCraft2 instance;
 	
-	@SidedProxy(clientSide = "cococraft2.client.ClientProxy", serverSide = "cococraft2.common.CommonProxy")
-	public static CommonProxy proxy;
-		
 	@Init
 	public void load(FMLInitializationEvent event)
 	{
 		proxy.registerRenderThings();
-		
-		CocoCraftBlocks.init();
-		CocoCraftItems.init();
-		CocoRecipes.init();
+
 		
 		
+
 		NetworkRegistry.instance().registerGuiHandler(this, this.proxy);
-		
+
 		GameRegistry.registerWorldGenerator(new WorldGenerator());
-		
+
 		GameRegistry.registerTileEntity(TileEntityCrusher.class, "Crusher");
 		GameRegistry.registerTileEntity(TileEntityCompressor.class, "Compressor");
 		GameRegistry.registerTileEntity(TileEntityBlastFurnace.class, "BlastFurnace");
+
 		
+
+	}
+	@PreInit
+	public void preInit(FMLPreInitializationEvent event) {
+		CocoCraftBlocks.init(null);
+		CocoCraftItems.init();
+		CocoRecipes.init();
+
 		addSmelting();
 		setToolClass();
-		
 	}
-	
+
 	public void addSmelting()
 	{
 		//Smelting Recipes
 		addMetaSmelting(blocks.Ore.blockID, 0, new ItemStack(items.Ingots, 1, 0));
 		addMetaSmelting(blocks.Ore.blockID, 1, new ItemStack(items.Ingots, 1, 1));
 		addMetaSmelting(blocks.Ore.blockID, 2, new ItemStack(items.Ingots, 1, 2));
-		
+
 		addMetaSmelting(items.Ingots.shiftedIndex, 9, new ItemStack(items.Ingots, 1, 1));
 		addMetaSmelting(items.Ingots.shiftedIndex, 10, new ItemStack(items.Ingots, 1, 2));
 		addMetaSmelting(items.Ingots.shiftedIndex, 7, new ItemStack(Item.ingotIron, 1));
 		addMetaSmelting(items.Ingots.shiftedIndex, 8, new ItemStack(Item.ingotGold, 1));
-		
-		
+
+
 		//Non Metadata Crusher Recipes
 		addCrushing(Item.coal.shiftedIndex, new ItemStack(items.Ingots, 1, 6));
 		addCrushing(Block.oreIron.blockID, new ItemStack(items.Ingots, 2, 7));
 		addCrushing(Block.oreGold.blockID, new ItemStack(items.Ingots, 2, 8));
 		addCrushing(Block.obsidian.blockID, new ItemStack(items.Ingots, 1, 12));
-		
+
 		//Metadata Crusher Recipes
 		addMetaCrushing(blocks.Ore.blockID, 1, new ItemStack(items.Ingots, 2, 9));
 		addMetaCrushing(blocks.Ore.blockID, 2, new ItemStack(items.Ingots, 2, 10));
-		
+
 		//Metadata Compressing Recipes
-		
-		
+
+
 		//Non Metadata Compressing Recipes
 		//addCompressing(Block.dirt.blockID, new ItemStack(Item.diamond, 64));
 	}
-	
+
 	public void setToolClass()
 	{
 		MinecraftForge.setToolClass(items.CocoPickaxe, "pickaxe", 3);
@@ -121,34 +127,34 @@ public class CocoCraft2
 		MinecraftForge.setToolClass(items.CocoShovel, "shovel", 3);
 		MinecraftForge.setToolClass(items.CocoSword, "sword", 3);
 		MinecraftForge.setToolClass(items.CocoHoe, "hoe", 3);
-		
+
 		MinecraftForge.setToolClass(items.MithrilPickaxe, "pickaxe", 2);
 		MinecraftForge.setToolClass(items.MithrilAxe, "axe", 2);
 		MinecraftForge.setToolClass(items.MithrilShovel, "shovel", 2);
 		MinecraftForge.setToolClass(items.MithrilSword, "sword", 2);
 		MinecraftForge.setToolClass(items.MithrilHoe, "hoe", 2);
-		
+
 		MinecraftForge.setToolClass(items.SilverPickaxe, "pickaxe", 2);
 		MinecraftForge.setToolClass(items.SilverAxe, "axe", 2);
 		MinecraftForge.setToolClass(items.SilverShovel, "shovel", 2);
 		MinecraftForge.setToolClass(items.SilverSword, "sword", 2);
 		MinecraftForge.setToolClass(items.SilverHoe, "hoe", 2);
-		
+
 		MinecraftForge.setToolClass(items.SteelPickaxe, "pickaxe", 3);
 		MinecraftForge.setToolClass(items.SteelAxe, "axe", 3);
 		MinecraftForge.setToolClass(items.SteelShovel, "shovel", 3);
 		MinecraftForge.setToolClass(items.SteelSword, "sword", 3);
 		MinecraftForge.setToolClass(items.SteelHoe, "hoe", 3);
-		
+
 		MinecraftForge.setToolClass(items.DragonStonePickaxe, "pickaxe", 3);
 		MinecraftForge.setToolClass(items.DragonStoneAxe, "axe", 3);
 		MinecraftForge.setToolClass(items.DragonStoneShovel, "shovel", 3);
 		MinecraftForge.setToolClass(items.DragonStoneSword, "sword", 3);
 		MinecraftForge.setToolClass(items.DragonStoneHoe, "hoe", 3);
 	}
-	
-	
-	
+
+
+
 	/**
 	 * 
 	 * @param input
@@ -169,7 +175,7 @@ public class CocoCraft2
 	{
 		CrusherRecipes.crushing().addMetaCrushing(input, meta, output);
 	}
-	
+
 	public static void addCrushing(int input, ItemStack output)
 	{
 		CrusherRecipes.crushing().addCrushing(input, output);
@@ -184,10 +190,10 @@ public class CocoCraft2
 	{
 		CompressorRecipes.compressing().addMetaCompressing(input, meta, output);
 	}
-	
+
 	public static void addCompressing(int input, ItemStack output)
 	{
 		CompressorRecipes.compressing().addCompressing(input, output);
 	}
-	
+
 }
