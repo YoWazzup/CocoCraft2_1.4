@@ -30,6 +30,7 @@ implements IWorldGenerator
 
 		for (i = 0; i < ConfigurationSettings.RARITY_COCO; i++)
 		{
+			//Coco Stone
 			int Xcoord = blockX + rand.nextInt(16);
 			int Ycoord = rand.nextInt(20);
 			int Zcoord = blockZ + rand.nextInt(16);
@@ -37,6 +38,7 @@ implements IWorldGenerator
 		}
 		for (i = 0; i < ConfigurationSettings.RARITY_MITHRIL; i++)
 		{
+			//Mithril Ore
 			int Xcoord = blockX + rand.nextInt(16);
 			int Ycoord = rand.nextInt(50);
 			int Zcoord = blockZ + rand.nextInt(16);
@@ -44,6 +46,7 @@ implements IWorldGenerator
 		}
 		for (i = 0; i < ConfigurationSettings.RARITY_SILVER; i++)
 		{
+			//Silver Ore
 			int Xcoord = blockX + rand.nextInt(16);
 			int Ycoord = rand.nextInt(50);
 			int Zcoord = blockZ + rand.nextInt(16);
@@ -51,11 +54,42 @@ implements IWorldGenerator
 		}
 		for (i = 0; i < ConfigurationSettings.RARITY_AMETHYST; i++)
 		{
+			//Amethyst Ore
 			int Xcoord = blockX + rand.nextInt(16);
 			int Ycoord = rand.nextInt(18);
 			int Zcoord = blockZ + rand.nextInt(16);
 			new WorldGenMinable(CocoCraftBlocks.BlockOre.blockID, 3, 4).generate(world, rand, Xcoord, Ycoord, Zcoord);
 		}
+		/* Essences */
+		for (i = 0; i < ConfigurationSettings.RARITY_ESSENCE_OVERWORLD; i++)
+		{
+			int Xcoord = blockX + rand.nextInt(16);
+			int Ycoord = rand.nextInt(64);
+			int Zcoord = blockZ + rand.nextInt(16);
+			new WorldGenMinable(CocoCraftBlocks.BlockEssence.blockID, 0, 5).generate(world, rand, Xcoord, Ycoord, Zcoord);
+		}
+		for (i = 0; i < ConfigurationSettings.RARITY_ESSENCE_OVERWORLD; i++)
+		{
+			int Xcoord = blockX + rand.nextInt(16);
+			int Ycoord = rand.nextInt(64);
+			int Zcoord = blockZ + rand.nextInt(16);
+			new WorldGenMinable(CocoCraftBlocks.BlockEssence.blockID, 1, 5).generate(world, rand, Xcoord, Ycoord, Zcoord);
+		}
+		for (i = 0; i < ConfigurationSettings.RARITY_ESSENCE_OVERWORLD; i++)
+		{
+			int Xcoord = blockX + rand.nextInt(16);
+			int Ycoord = rand.nextInt(64);
+			int Zcoord = blockZ + rand.nextInt(16);
+			new WorldGenMinable(CocoCraftBlocks.BlockEssence.blockID, 2, 5).generate(world, rand, Xcoord, Ycoord, Zcoord);
+		}
+		for (i = 0; i < ConfigurationSettings.RARITY_ESSENCE_OVERWORLD; i++)
+		{
+			int Xcoord = blockX + rand.nextInt(16);
+			int Ycoord = rand.nextInt(64);
+			int Zcoord = blockZ + rand.nextInt(16);
+			new WorldGenMinable(CocoCraftBlocks.BlockEssence.blockID, 3, 5).generate(world, rand, Xcoord, Ycoord, Zcoord);
+		}
+		
 	}
 
 	private void generateNether(World world, Random rand, int blockX, int blockZ)

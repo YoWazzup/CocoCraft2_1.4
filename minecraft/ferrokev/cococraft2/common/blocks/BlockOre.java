@@ -8,6 +8,7 @@ import java.util.Random;
 import cpw.mods.fml.common.Side;
 import cpw.mods.fml.common.asm.SideOnly;
 import ferrokev.cococraft2.common.Reference;
+import ferrokev.cococraft2.common.items.CocoCraftItems;
 import net.minecraft.src.Block;
 import net.minecraft.src.CreativeTabs;
 import net.minecraft.src.ItemStack;
@@ -47,11 +48,25 @@ public class BlockOre extends Block {
 
 	public int idDropped(int i, Random rand, int j)
 	{
-		return this.blockID;
+		switch(j) 
+		{
+		case 0 : return blockID;
+		case 1 : return blockID;
+		case 2 : return blockID;
+		case 3 : return CocoCraftItems.ModItem.shiftedIndex;
+		default : return blockID;
+		}
 	}
 
 	public int damageDropped(int i) {
-		return i;
+		switch(i) 
+		{
+		case 0 : return 0;
+		case 1 : return 1;
+		case 2 : return 2;
+		case 3 : return 3;
+		default : return 0;
+		}
 	}
 
 	@SideOnly(Side.CLIENT)

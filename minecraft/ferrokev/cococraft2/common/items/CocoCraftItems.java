@@ -133,9 +133,9 @@ public class CocoCraftItems
 
 		config.load();
 
-		ConfigurationSettings.ID_MODITEM = config.getItem("item", "ID_MODITEM", ConfigurationSettings.ID_MODITEM_DEFAULT).getInt();
-		ConfigurationSettings.ID_HAMMER = config.getItem("item", "ID_HAMMER", ConfigurationSettings.ID_HAMMER_DEFAULT).getInt();
-		ConfigurationSettings.ID_ESSENCE = config.getItem("item", "ID_ESSENCE", ConfigurationSettings.ID_ESSENCE_DEFAULT).getInt();
+		ConfigurationSettings.ID_MODITEM = config.getItem(config.CATEGORY_ITEM, "ID_MODITEM", ConfigurationSettings.ID_MODITEM_DEFAULT).getInt();
+		ConfigurationSettings.ID_HAMMER = config.getItem(config.CATEGORY_ITEM ,"ID_HAMMER", ConfigurationSettings.ID_HAMMER_DEFAULT).getInt();
+		ConfigurationSettings.ID_ESSENCE = config.getItem(config.CATEGORY_ITEM, "ID_ESSENCE", ConfigurationSettings.ID_ESSENCE_DEFAULT).getInt();
 
 		ConfigurationSettings.ID_PICKAXE_COCO = config.getItem(Reference.CATEGORT_TOOL, "ID_PICKAXE_COCO", ConfigurationSettings.ID_PICKAXE_COCO_DEFAULT).getInt();
 		ConfigurationSettings.ID_AXE_COCO = config.getItem(Reference.CATEGORT_TOOL, "ID_AXE_COCO", ConfigurationSettings.ID_AXE_COCO_DEFAULT).getInt();

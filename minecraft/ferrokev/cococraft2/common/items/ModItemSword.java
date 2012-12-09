@@ -15,7 +15,7 @@ public class ModItemSword extends ItemSword
   {
     super(i, enums);
 
-    setCreativeTab(CreativeTabs.tabTools);
+    setCreativeTab(CreativeTabs.tabCombat);
   }
   @SideOnly(Side.CLIENT)
   public String getTextureFile() {
