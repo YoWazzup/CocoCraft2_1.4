@@ -2,14 +2,14 @@ package ferrokev.cococraft2.common.items;
 /**
  * @author Ferrokev
  */
-import cpw.mods.fml.common.Side;
-import cpw.mods.fml.common.asm.SideOnly;
 import java.util.List;
 
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import ferrokev.cococraft2.common.Reference;
-import net.minecraft.src.CreativeTabs;
-import net.minecraft.src.Item;
-import net.minecraft.src.ItemStack;
 
 public class ModItem extends Item
 {
@@ -67,7 +67,8 @@ public class ModItem extends Item
 
   public String getItemNameIS(ItemStack i)
   {
-    switch (i.getItemDamage()) { case 0:
+    switch (i.getItemDamage()) { 
+	case 0:
       return "CocoIngot";
     case 1:
       return "MithrilIngot";

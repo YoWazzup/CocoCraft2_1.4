@@ -1,13 +1,13 @@
 package ferrokev.cococraft2.client.machine;
 
-import net.minecraft.src.GuiContainer;
-import net.minecraft.src.InventoryPlayer;
-import net.minecraft.src.StatCollector;
+import net.minecraft.client.gui.inventory.GuiContainer;
+import net.minecraft.entity.player.InventoryPlayer;
+import net.minecraft.util.StatCollector;
 
 import org.lwjgl.opengl.GL11;
 
-import cpw.mods.fml.common.Side;
-import cpw.mods.fml.common.asm.SideOnly;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import ferrokev.cococraft2.common.Reference;
 import ferrokev.cococraft2.common.machine.ContainerCompressor;
 import ferrokev.cococraft2.common.machine.TileEntityCompressor;

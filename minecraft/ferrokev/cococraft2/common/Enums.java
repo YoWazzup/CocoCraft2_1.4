@@ -2,8 +2,8 @@ package ferrokev.cococraft2.common;
 /**
  * @author Ferrokev
  */
-import net.minecraft.src.EnumArmorMaterial;
-import net.minecraft.src.EnumToolMaterial;
+import net.minecraft.item.EnumArmorMaterial;
+import net.minecraft.item.EnumToolMaterial;
 import net.minecraftforge.common.EnumHelper;
 
 public class Enums

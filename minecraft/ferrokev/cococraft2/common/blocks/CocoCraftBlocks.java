@@ -2,9 +2,9 @@ package ferrokev.cococraft2.common.blocks;
 /**
  * @author Ferrokev
  */
-import net.minecraft.src.Block;
-import net.minecraft.src.Item;
-import net.minecraft.src.ItemStack;
+import net.minecraft.block.Block;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.Configuration;
 import net.minecraftforge.oredict.OreDictionary;
 import cpw.mods.fml.common.Mod.PreInit;
@@ -22,6 +22,7 @@ public class CocoCraftBlocks
 	public static Block BlockEssence;
 	public static Block BlockCrusher;
 	public static Block BlockCompressor;
+	public static Block BlockBlastFurnace;
 
 	public static GameRegistry gr;
 	public static LanguageRegistry lg;
@@ -37,6 +38,7 @@ public class CocoCraftBlocks
 		BlockEssence = new BlockEssence(ConfigurationSettings.ID_BLOCKESSENCE, Reference.SHEET_LOCATION_BLOCK_ESSENCE_DEFAULT);
 		BlockCrusher = new BlockCrusher(ConfigurationSettings.ID_BLOCK_CRUSHER, false);
 		BlockCompressor = new BlockCompressor(ConfigurationSettings.ID_BLOCK_COMPRESSOR, false);
+		BlockBlastFurnace = new BlockBlastFurnace(ConfigurationSettings.ID_BLOCK_BLASTFURNACE, false);
 
 		lg.instance().addStringLocalization("tile.BlockOre.cocoStone.name", "Coco Stone");
 		lg.instance().addStringLocalization("tile.BlockOre.mithrilOre.name", "Mithril Ore");
@@ -57,9 +59,11 @@ public class CocoCraftBlocks
 		
 		lg.addName(BlockCrusher, "Crusher");
 		lg.addName(BlockCompressor, "Compressor");
+		lg.addName(BlockBlastFurnace, "Blast Furnace");
 		
 		gr.registerBlock(BlockCrusher);
 		gr.registerBlock(BlockCompressor);
+		gr.registerBlock(BlockBlastFurnace);
 		
 		Item.itemsList[ConfigurationSettings.ID_ORES] = new ItemBlockOre(ConfigurationSettings.ID_ORES-256, BlockOre).setItemName("ores");
 		Item.itemsList[ConfigurationSettings.ID_BLOCKORE] = new ItemBlockOreBlock(ConfigurationSettings.ID_BLOCKORE-256, BlockOreBlock).setItemName("oreBlocks");	
@@ -80,6 +84,8 @@ public class CocoCraftBlocks
 		ConfigurationSettings.ID_BLOCKESSENCE = Integer.parseInt(config.getBlock(config.CATEGORY_BLOCK, "ID_ESSENCEBLOCK", ConfigurationSettings.ID_BLOCKESSENCE_DEFAULT).value);
 		ConfigurationSettings.ID_BLOCK_CRUSHER = Integer.parseInt(config.getBlock(config.CATEGORY_BLOCK, "ID_BLOCK_CRUSHER", ConfigurationSettings.ID_BLOCK_CRUSHER_DEFAULT).value);
 		ConfigurationSettings.ID_BLOCK_COMPRESSOR = Integer.parseInt(config.getBlock(config.CATEGORY_BLOCK, "ID_BLOCK_COMPRESSOR", ConfigurationSettings.ID_BLOCK_COMPRESSOR_DEFAULT).value);
+		ConfigurationSettings.ID_BLOCK_BLASTFURNACE = Integer.parseInt(config.getBlock(config.CATEGORY_BLOCK, "ID_BLOCK_BLASTFURNACE", ConfigurationSettings.ID_BLOCK_BLASTFURNACE_DEFAULT).value);
+		
 		
 		ConfigurationSettings.RARITY_COCO = config.get(CATEGORY_RARITY, "RARITY_COCO", ConfigurationSettings.RARITY_COCO_DEFAULT).getInt();
 		ConfigurationSettings.RARITY_MITHRIL = config.get(CATEGORY_RARITY, "RARITY_MITHRIL", ConfigurationSettings.RARITY_MITHRIL_DEFAULT).getInt();

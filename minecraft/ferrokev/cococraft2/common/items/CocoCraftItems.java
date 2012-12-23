@@ -2,8 +2,8 @@ package ferrokev.cococraft2.common.items;
 /**
  * @author Ferrokev
  */
-import net.minecraft.src.Item;
-import net.minecraft.src.ItemStack;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.Configuration;
 import cpw.mods.fml.common.Mod.PreInit;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
@@ -41,6 +41,7 @@ public class CocoCraftItems
 	public static Item ItemHoeMithril;
 	public static Item ItemHoeSilver;
 	public static Item ItemHoeAmethyst;
+	public static Item BookOfExchange;
 
 	public static void init()
 	{
@@ -73,7 +74,10 @@ public class CocoCraftItems
 		ItemHoeSilver = new ModItemHoe(ConfigurationSettings.ID_HOE_SILVER, Enums.Silver).setItemName("ItemHoeSilver").setIconCoord(14, 1);
 		ItemHoeAmethyst = new ModItemHoe(ConfigurationSettings.ID_HOE_AMETHYST, Enums.Amethyst).setItemName("ItemHoeAmethyst").setIconCoord(3, 2);
 
+		BookOfExchange = new BookExchange(1200);
+		
 		ItemHammer.setContainerItem(ItemHammer);
+		BookOfExchange.setContainerItem(BookOfExchange);
 
 		addName();
 	}
@@ -100,7 +104,7 @@ public class CocoCraftItems
 		LanguageRegistry.addName(new ItemStack(ItemEssence, 1, 1), "Water Essence");
 		LanguageRegistry.addName(new ItemStack(ItemEssence, 1, 2), "Air Essence");
 		LanguageRegistry.addName(new ItemStack(ItemEssence, 1, 3), "Earth Essence");
-		LanguageRegistry.addName(new ItemStack(ItemEssence, 1, 4), "Magma Essence");
+		LanguageRegistry.addName(new ItemStack(ItemEssence, 1, 4), "Fire Essence");
 
 		LanguageRegistry.addName(ItemHammer, "Hammer");
 
@@ -124,6 +128,8 @@ public class CocoCraftItems
 		LanguageRegistry.addName(ItemHoeMithril, "Mithril Hoe");
 		LanguageRegistry.addName(ItemHoeSilver, "Silver Hoe");
 		LanguageRegistry.addName(ItemHoeAmethyst, "Amethyst Hoe");
+		
+		LanguageRegistry.addName(BookOfExchange, "Book Of Exchange");
 	}
 
 	@PreInit
@@ -161,7 +167,7 @@ public class CocoCraftItems
 		ConfigurationSettings.ID_SWORD_AMETHYST = config.getItem(Reference.CATEGORT_TOOL, "ID_SWORD_AMETHYST", ConfigurationSettings.ID_SWORD_AMETHYST_DEFAULT).getInt();
 		ConfigurationSettings.ID_HOE_AMETHYST = config.getItem(Reference.CATEGORT_TOOL, "ID_HOE_AMETHYST", ConfigurationSettings.ID_HOE_AMETHYST_DEFAULT).getInt();
 
-
+		ConfigurationSettings.ID_BOOK_EXCHANGE = config.getItem(config.CATEGORY_ITEM, "ID_BOOK_ECXHANGE", ConfigurationSettings.ID_BOOK_EXCHANGE_DEFAULT).getInt();
 
 		config.save();
 	}

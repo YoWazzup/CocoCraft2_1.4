@@ -1,8 +1,8 @@
 package ferrokev.cococraft2.common.blocks;
 
-import net.minecraft.src.Block;
-import net.minecraft.src.ItemBlock;
-import net.minecraft.src.ItemStack;
+import net.minecraft.block.Block;
+import net.minecraft.item.ItemBlock;
+import net.minecraft.item.ItemStack;
 
 public class ItemBlockEssence extends ItemBlock {
 

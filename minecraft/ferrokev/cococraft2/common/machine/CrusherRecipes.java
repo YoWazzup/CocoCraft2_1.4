@@ -4,13 +4,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-import ferrokev.cococraft2.common.CocoCraft2;
-import ferrokev.cococraft2.common.blocks.CocoCraftBlocks;
-import ferrokev.cococraft2.common.items.CocoCraftItems;
-
-import net.minecraft.src.Block;
-import net.minecraft.src.Item;
-import net.minecraft.src.ItemStack;
+import net.minecraft.item.ItemStack;
 
 public class CrusherRecipes {
 	
@@ -24,18 +18,7 @@ public class CrusherRecipes {
 	}
 	
 	public CrusherRecipes() {
-		// Mithril Ore -> Mithril Dust
-		addMetaCrushing(CocoCraftBlocks.BlockOre.blockID, 1, new ItemStack(CocoCraftItems.ModItem, 2, 9));
-		// Silver Ore -> Silver Dust
-		addMetaCrushing(CocoCraftBlocks.BlockOre.blockID, 2, new ItemStack(CocoCraftItems.ModItem, 2, 10));
-		// Coal -> Coal Dust
-		addCrushing(Item.coal.shiftedIndex, new ItemStack(CocoCraftItems.ModItem, 1, 6));
-		// Iron Ore -> Iron Dust
-		addCrushing(Block.oreIron.blockID, new ItemStack(CocoCraftItems.ModItem, 2, 7));
-		// Gold Ore -> Gold Dust (You see me mashing up your airwaves)
-		addCrushing(Block.oreGold.blockID, new ItemStack(CocoCraftItems.ModItem, 2, 8));
-		// Obsidian -> Obsidian Dust
-		addCrushing(Block.obsidian.blockID, new ItemStack(CocoCraftItems.ModItem, 1, 12));
+		
 	}
 	
 	public void addCrushing(int input, ItemStack output) {

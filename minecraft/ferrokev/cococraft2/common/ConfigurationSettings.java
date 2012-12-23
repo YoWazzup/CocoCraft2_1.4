@@ -12,6 +12,7 @@ public class ConfigurationSettings
 	public static int ID_BLOCKESSENCE;
 	public static int ID_BLOCK_CRUSHER;
 	public static int ID_BLOCK_COMPRESSOR;
+	public static int ID_BLOCK_BLASTFURNACE;
 	
 	/* SETS THE IDS FOR ITEMS */
 	public static int ID_MODITEM;
@@ -43,12 +44,15 @@ public class ConfigurationSettings
 	public static int ID_HOE_SILVER;
 	public static int ID_HOE_AMETHYST;
 	
+	public static int ID_BOOK_EXCHANGE;
+	
 	/* SETS THE DEFAULT IDS FOR BLOCKS */
 	public static int ID_ORES_DEFAULT = 500;
 	public static int ID_BLOCKORE_DEFAULT = 501;
 	public static int ID_BLOCKESSENCE_DEFAULT = 502;
 	public static int ID_BLOCK_CRUSHER_DEFAULT = 503;
 	public static int ID_BLOCK_COMPRESSOR_DEFAULT = 504;
+	public static int ID_BLOCK_BLASTFURNACE_DEFAULT = 505;
 
 	/* SETS THE DEFAULT IDS FOR ITEMS */
 	public static int ID_MODITEM_DEFAULT = 6000;
@@ -80,6 +84,8 @@ public class ConfigurationSettings
 	public static int ID_PICKAXE_SILVER_DEFAULT = 6021;
 	public static int ID_PICKAXE_AMETHYST_DEFAULT = 6022;
 	
+	public static int ID_BOOK_EXCHANGE_DEFAULT = 6023;
+	
 
 	/* SETS THE RARITY FOR THE ORES */
 	public static int RARITY_COCO;
@@ -100,7 +106,7 @@ public class ConfigurationSettings
 	/* Amount of Ticks that fuel will last */
 	public static int DURATION_FUEL_CRUSHER_DEFAULT = 1400;
 	public static int DURATION_FUEL_COMPRESSOR_DEFAULT = 1400;
-	public static int DURATION_FUEL_BLAST_DEFAULT = 800;
+	public static int DURATION_FUEL_BLAST_DEFAULT = 900;
 	
 	public static int DURATION_FUEL_CRUSHER;
 	public static int DURATION_FUEL_COMPRESSOR;
@@ -110,7 +116,7 @@ public class ConfigurationSettings
 	
 	public static int DURATION_PROCESS_CRUSHER_DEFAULT = 200;
 	public static int DURATION_PROCESS_COMPRESSOR_DEFAULT = 200;
-	public static int DURATION_PROCESS_BLAST_DEFAULT = 400;
+	public static int DURATION_PROCESS_BLAST_DEFAULT = 300;
 	
 	public static int DURATION_PROCESS_CRUSHER;
 	public static int DURATION_PROCESS_COMPRESSOR;

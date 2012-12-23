@@ -4,11 +4,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-import net.minecraft.src.Block;
-import net.minecraft.src.Item;
-import net.minecraft.src.ItemStack;
-import ferrokev.cococraft2.common.blocks.CocoCraftBlocks;
-import ferrokev.cococraft2.common.items.CocoCraftItems;
+import net.minecraft.item.ItemStack;
 
 public class CompressorRecipes {
 	

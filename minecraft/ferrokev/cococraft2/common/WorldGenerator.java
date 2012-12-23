@@ -2,17 +2,15 @@ package ferrokev.cococraft2.common;
 /**
  * @author Ferrokev
  */
+import java.util.Random;
+
+import net.minecraft.world.World;
+import net.minecraft.world.chunk.IChunkProvider;
+import net.minecraft.world.gen.feature.WorldGenMinable;
 import cpw.mods.fml.common.IWorldGenerator;
 import ferrokev.cococraft2.common.blocks.CocoCraftBlocks;
-import java.util.Random;
-import net.minecraft.src.Block;
-import net.minecraft.src.IChunkProvider;
-import net.minecraft.src.World;
-import net.minecraft.src.WorldGenMinable;
-import net.minecraft.src.WorldProvider;
 
-public class WorldGenerator
-implements IWorldGenerator
+public class WorldGenerator implements IWorldGenerator
 {
 	public void generate(Random rand, int chunkX, int chunkZ, World world, IChunkProvider chunkGenerator, IChunkProvider chunkProvider)
 	{
